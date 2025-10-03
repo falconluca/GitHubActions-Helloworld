@@ -1,13 +1,19 @@
 on: push
 
 jobs:
-  checkout-files:
+  build-next:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: ls
-  check-node-version:
+      - name: 切换到代码根目录
+        uses: actions/checkout@v4
+      - name: 安装依赖
+        run: pnpm i
+      - name: 构建 next 项目
+        run: npm run build
+  check-build-result:
     runs-on: ubuntu-latest
     steps:
-      - run: node -v
-      - run: npm -v
+      - name: 切换到代码根目录
+        uses: actions/checkout@v4
+      - name: 检查构建结果
+        run: ls -l
