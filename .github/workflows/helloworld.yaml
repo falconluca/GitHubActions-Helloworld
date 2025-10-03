@@ -30,4 +30,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 检查构建结果
-        run: ls -l
+        run: ls -la
