@@ -1,3 +1,1 @@
-# GitHubActions-Helloworld
-
-你好，世界
+https://falconluca.github.io/GitHubActions-Helloworld/
