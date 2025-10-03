@@ -16,18 +16,11 @@ jobs:
       - name: 构建 next 项目
         run: npm run build
 
+      - name: 检查构建结果
+        run: ls -al
+
       - name: "部署到 GitHub Pages"
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: out
-
-  check-build-result:
-    runs-on: ubuntu-latest
-    needs: build-next
-    steps:
-      - name: 切换到代码根目录
-        uses: actions/checkout@v4
-
-      - name: 检查构建结果
-        run: ls -la
